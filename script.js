@@ -66,7 +66,28 @@
         });
 
 
+	// resize image 
 
+	        $(window).on("resize", updateBanner);
+	        updateBanner();
+
+	        function updateBanner() {
+	            var window_custom = $(window).width();
+	            //
+	            var height_custom = $(window).height();
+
+	            if(window_custom <= 1200){
+	                $('.banner>img').css({
+	                    position: "relative",
+	                    left: ($('.banner>img').parent().width()/2) - ($('.banner>img').width()/2)
+	                });
+	            } else {
+	                $('.banner>img').css({
+	                    position: "relative",
+	                    left: 0
+	                });
+	            }
+	        }
 
 
         });
